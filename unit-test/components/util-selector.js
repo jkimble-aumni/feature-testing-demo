@@ -42,8 +42,6 @@ function UtilSelector() {
       return curr.filter((_, i) => i !== index);
     });
 
-  useEffect(() => console.log("activeUtils", activeUtils), [activeUtils]);
-
   return (
     <VStack>
       <HStack spacing={4}>
@@ -60,7 +58,7 @@ function UtilSelector() {
           </RadioCard>
         ))}
       </HStack>
-      <Text pt="24px" fontSize="lg">
+      <Text as="div" pt="24px" fontSize="lg">
         {formatedText}
       </Text>
     </VStack>
