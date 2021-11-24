@@ -5,10 +5,10 @@ import UtilSelectorProvider, {
   useUtilSelectorContext,
 } from "./util-selector.provider";
 
-export default function UtilSelectorWithContext() {
+export default function UtilSelector() {
   return (
     <UtilSelectorProvider>
-      <UtilSelector />
+      <Selector />
     </UtilSelectorProvider>
   );
 }
@@ -32,7 +32,7 @@ function RadioCard(props) {
   );
 }
 
-function UtilSelector() {
+function Selector() {
   const { formatedText, utils, activeUtils, setActiveUtils } =
     useUtilSelectorContext();
   const handleChange = ({ target: { name } }) =>
