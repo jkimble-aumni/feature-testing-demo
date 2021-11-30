@@ -1,6 +1,5 @@
 import { HStack, VStack } from "@chakra-ui/layout";
 import { Text, Checkbox } from "@chakra-ui/react";
-import { useEffect } from "react";
 import UtilSelectorProvider, {
   useUtilSelectorContext,
 } from "./util-selector.provider";
@@ -10,25 +9,6 @@ export default function UtilSelector() {
     <UtilSelectorProvider>
       <Selector />
     </UtilSelectorProvider>
-  );
-}
-
-function RadioCard(props) {
-  return (
-    <Checkbox
-      cursor="pointer"
-      borderWidth="1px"
-      borderRadius="md"
-      boxShadow="md"
-      _checked={{
-        borderColor: "teal.600",
-      }}
-      px={5}
-      py={3}
-      {...props}
-    >
-      {props.children}
-    </Checkbox>
   );
 }
 
@@ -62,5 +42,24 @@ function Selector() {
         {formatedText}
       </Text>
     </VStack>
+  );
+}
+
+function RadioCard(props) {
+  return (
+    <Checkbox
+      cursor="pointer"
+      borderWidth="1px"
+      borderRadius="md"
+      boxShadow="md"
+      _checked={{
+        borderColor: "teal.600",
+      }}
+      px={5}
+      py={3}
+      {...props}
+    >
+      {props.children}
+    </Checkbox>
   );
 }
