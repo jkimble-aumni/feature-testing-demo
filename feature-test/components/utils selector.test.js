@@ -18,22 +18,15 @@ const { capPig, capText, defaultText, pOne, pThree, pTwo, pigText } = {
     "My Captain does not answer, his lips are pale and still, My father does not feel my arm, he has no pulse nor will, The ship is anchor’d safe and sound, its voyage closed and done, From fearful trip the victor ship comes in with object won; Exult O shores, and ring O bells! But I with mournful tread, Walk the deck my Captain lies, Fallen cold and dead.",
 };
 
-describe("UtilSelector defaults", () => {
-  it("should render util selectors", () => {
+describe("UtilSelector", () => {
+  it("should render default text & util selectors", () => {
     render(<UtilSelector />);
     expect(screen.getByText("toPigLatin")).toBeInTheDocument();
     expect(screen.getByText("toCapitalCase")).toBeInTheDocument();
     expect(screen.getByText("toParagraphs")).toBeInTheDocument();
-  });
-
-  it("should render default text", () => {
-    render(<UtilSelector />);
-
     expect(screen.getByText(defaultText)).toBeInTheDocument();
   });
-});
 
-describe("UtilSelector with filters", () => {
   it("should render capital case text and return to default", () => {
     render(<UtilSelector />);
     userEvent.click(screen.getByText("toCapitalCase"));
